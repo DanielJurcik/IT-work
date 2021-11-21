@@ -30,4 +30,6 @@ Route::get('/delete-task/{id}', [HomeController::class, 'deleteTask'])->name('de
 Route::get('/update-task-form/{id}', [HomeController::class, 'getUpdateForm'])->name('update-form');
 Route::post('/update-task', [HomeController::class, 'updateTask'])->name('update');
 Route::get('/select-all-offers', [HomeController::class, 'selectAllOffers'])->name('select-all-offers');
+
 Route::get('/companies', [CompanyController::class, 'selectAllCompanies'])->name('select-all-companies');
+Route::get('/company-detail/{id}', [CompanyController::class, 'selectCompany'])->name('select-company');

@@ -32,4 +32,9 @@ class JobOffer extends Model
     {
         return $this->belongsTo(Owner::class);
     }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

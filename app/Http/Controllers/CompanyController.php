@@ -50,10 +50,11 @@ class CompanyController extends Controller
         return view('companies', ['companies' => $companies]);
     }
 
-    public function getUpdateForm($id)
+    public function selectCompany($id)
     {
-        $task = Task::find($id);
-        return view('update', ['task' => $task]);
+        $company = Company::find($id);
+        $jobOffers = JobOffer::where('company_id', '=', $id)->get();
+        return view('company-detail', ['company' => $company], ['jobOffers' => $jobOffers]);
     }
 
     public function updateTask(Request $request)
