@@ -30,7 +30,7 @@
                 <td>{{ $company->ICO }}</td>
                 <td class="table-operations">
                     <a title="info" href="{{ route('select-company', ['id' => $company->id]) }}"><i class="mdi mdi-information"></i></a>
-                    <a title="edit" href="{{ route('update-company', ['id' => $company->id]) }}"><i class="mdi mdi-application-edit"></i></a>
+                    <a title="edit" href="{{ route('update-company-form', ['id' => $company->id]) }}"><i class="mdi mdi-application-edit"></i></a>
                     <a title="delete" href="{{ route('delete', ['id' => $company->id]) }}"><i class="mdi mdi-delete"></i></a>
                 </td>
             </tr>

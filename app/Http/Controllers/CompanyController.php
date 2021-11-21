@@ -57,24 +57,38 @@ class CompanyController extends Controller
         return view('company-detail', ['company' => $company], ['jobOffers' => $jobOffers]);
     }
 
-    public function updateTask(Request $request)
+    public function updateCompany(Request $request)
     {
         $id = $request->input('id', false);
-        $taskName = $request->input('name', false);
-        $owner = $request->input('owner', false);
+        $company_name = $request->input('companyName', false);
+        $sector = $request->input('sector', false);
+        $company_description = $request->input('companyDescription', false);
+        $number_of_employees = $request->input('numberOfEmployees', false);
+        $contact_mail = $request->input('contactMail', false);
+        $contact_phone = $request->input('contactPhone', false);
+        $ico = $request->input('ico', false);
+        $dic = $request->input('dic', false);
 
         if($id) {
-            $existingOwner = Owner::where('owner_name', '=', $owner)->first();
-            if($existingOwner) {
-                $task = Task::find($id);
-                $task->name = $taskName;
-                $task->owner_id = $existingOwner->id;
-                $task->update();
-            } else {
-                return redirect()->route('insert-form');
+            $company = Company::find($id);
+            $company->name = $company_name;
+            $company->sector = $sector;
+            $company->description = $company_description;
+            $company->number_of_staff = $number_of_employees;
+            $company->contact_mail = $contact_mail;
+            $company->contact_phone = $contact_phone;
+            $company->ICO = $ico;
+            $company->DIC = $dic;
+            $company->update();
             }
-        }
 
-        return redirect()->route('select-all-tasks');
+        return redirect()->route('select-all-companies');
+    }
+
+
+    public function getUpdateCompanyForm($id)
+    {
+        $company= Company::find($id);
+        return view('company-update', ['company' => $company]);
     }
 }
