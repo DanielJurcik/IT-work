@@ -14,8 +14,8 @@ class AddFkJobOffer extends Migration
     public function up()
     {
         Schema::table('job_offer', function (Blueprint $table) {
-            $table->unsignedBigInteger('owner_id');
-            $table->foreign('owner_id')->references('id')->on('owner');
+            $table->unsignedBigInteger('company_id')->nullable();
+            $table->foreign('company_id')->references('id')->on('company');
         });
     }
 
@@ -26,6 +26,10 @@ class AddFkJobOffer extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('job_offer', function (Blueprint $table) {
+            $table->dropForeign('company_id');
+            $table->dropIndex('company_id');
+            $table->dropColumn('company_id');
+        });
     }
 }

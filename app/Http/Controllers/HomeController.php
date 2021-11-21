@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function getInsertForm()
     {
-        return view('insert');
+        return view('company-insert');
     }
 
     public function insertTask(Request $request)

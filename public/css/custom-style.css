@@ -7,3 +7,15 @@ table .table-operations i.mdi-delete{
     color: crimson;
 }
 
+table{
+    overflow-x: scroll;
+}
+
+.btn-gradient-primary{
+    background: #03a9f4;
+}
+
+.btn-lg, .btn-group-lg > .btn{
+    padding-right: 24px;
+    padding-left: 24px;
+}
