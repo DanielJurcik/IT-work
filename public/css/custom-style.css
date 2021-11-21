@@ -1,0 +1,9 @@
+table .table-operations i{
+    margin-right: 16px;
+    font-size: 20px;
+}
+
+table .table-operations i.mdi-delete{
+    color: crimson;
+}
+
