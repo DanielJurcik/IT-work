@@ -25,10 +25,10 @@
                 <td>{{ $offer->company->name }}</td>
                 <td>{{ $offer->salary_min }} - {{ $offer->salary_max }} €</td>
                 <td>{{ $offer->work_place }}</td>
-                <td>
-                  <a href="{{ route('select', ['id' => $offer->id]) }}">Detail</a>
-                  <a href="{{ route('delete', ['id' => $offer->id]) }}">Vymazat</a>
-                  <a href="{{ route('update-form', ['id' => $offer->id]) }}">Aktualizovat</a>
+                <td class="table-operations">
+                    <a title="info" href="{{ route('select-job-offer', ['id' => $offer->id]) }}"><i class="mdi mdi-information"></i></a>
+                    <a title="edit" href="{{ route('update-job-offer-form', ['id' => $offer->id]) }}"><i class="mdi mdi-application-edit"></i></a>
+                    <a title="delete" href="{{ route('delete-job-offer', ['id' => $offer->id]) }}"><i class="mdi mdi-delete"></i></a>
                 </td>
             </tr>
         @endforeach

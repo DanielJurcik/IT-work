@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\JobOfferController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,15 @@ Route::get('/select-task/{id}', [HomeController::class, 'selectTask'])->name('se
 Route::get('/delete-task/{id}', [HomeController::class, 'deleteTask'])->name('delete');
 Route::get('/update-task-form/{id}', [HomeController::class, 'getUpdateForm'])->name('update-form');
 Route::post('/update-task', [HomeController::class, 'updateTask'])->name('update');
+
+
+Route::get('/test1', [HomeController::class, 'test'])->name('select-job-offer');
+Route::get('/test2', [HomeController::class, 'test'])->name('update-job-offer-form');
+Route::get('/test3', [HomeController::class, 'test'])->name('delete-job-offer');
+
 Route::get('/select-all-offers', [HomeController::class, 'selectAllOffers'])->name('select-all-offers');
+Route::get('/create-job-offer/{id}', [JobOfferController::class, 'createNewJobOffer'])->name('create-new-job-offer');
+Route::post('/insert-job-offer', [JobOfferController::class, 'insertNewJobOffer'])->name('insert-job-offer');
 
 Route::post('/insert-company', [HomeController::class, 'insertCompany'])->name('insert-company');
 Route::get('/add-company', [HomeController::class, 'getInsertForm'])->name('insert-form');
