@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="contact-mail">Contact mail</label>
-                <input type="emai;" class="form-control" id="contact-mail" placeholder="Contact mail" name="contactMail">
+                <input type="email" class="form-control" id="contact-mail" placeholder="Contact mail" name="contactMail">
             </div>
             <div class="form-group">
                 <label for="contact-phone">Contact phone</label>

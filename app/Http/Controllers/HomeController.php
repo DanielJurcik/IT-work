@@ -11,22 +11,6 @@ use Illuminate\Routing\Controller;
 
 class HomeController extends Controller
 {
-    public function test()
-    {
-        $names = [
-            0 => 'Dominik',
-            1 => 'Mato',
-            2 => 'Peter',
-            3 => 'Michal',
-            4 => 'Ondrej',
-            5 => 'Richard',
-            6 => 'Ide',
-        ];
-
-        foreach ($names as $key => $name) {
-            echo $name . "<br>";
-        }
-    }
 
     public function getInsertForm()
     {
@@ -59,7 +43,6 @@ class HomeController extends Controller
 
     public function insertCompany(Request $request)
     {
-        echo('funguje');
         $company_name = $request->input('companyName');
         $sector = $request->input('sector');
         $company_description = $request->input('companyDescription');
