@@ -31,15 +31,16 @@ Route::get('/update-task-form/{id}', [HomeController::class, 'getUpdateForm'])->
 Route::post('/update-task', [HomeController::class, 'updateTask'])->name('update');
 
 
-Route::get('/test1', [HomeController::class, 'test'])->name('select-job-offer');
-Route::get('/test2', [HomeController::class, 'test'])->name('update-job-offer-form');
+Route::get('/job-offer-info/{id}', [JobOfferController::class, 'jobOfferDetail'])->name('select-job-offer');
+Route::get('/update-job-offer-form/{id}', [JobOfferController::class, 'showJobOfferForm'])->name('update-job-offer-form');
+Route::post('/update-job-offer', [JobOfferController::class, 'updateJobOffer'])->name('update-job-offer');
 Route::get('/test3', [HomeController::class, 'test'])->name('delete-job-offer');
 
 Route::get('/select-all-offers', [HomeController::class, 'selectAllOffers'])->name('select-all-offers');
 Route::get('/create-job-offer/{id}', [JobOfferController::class, 'createNewJobOffer'])->name('create-new-job-offer');
 Route::post('/insert-job-offer', [JobOfferController::class, 'insertNewJobOffer'])->name('insert-job-offer');
 
-Route::post('/insert-company', [HomeController::class, 'insertCompany'])->name('insert-company');
+Route::post('/insert-company', [CompanyController::class, 'insertCompany'])->name('insert-company');
 Route::get('/add-company', [HomeController::class, 'getInsertForm'])->name('insert-form');
 Route::get('/companies', [CompanyController::class, 'selectAllCompanies'])->name('select-all-companies');
 Route::get('/company-detail/{id}', [CompanyController::class, 'selectCompany'])->name('select-company');

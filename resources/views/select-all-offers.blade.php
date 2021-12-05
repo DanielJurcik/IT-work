@@ -9,8 +9,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th> ID </th>
-            <th> Job title </th>
+            <th> Headline </th>
             <th> Company </th>
             <th> Salary range </th>
             <th> Work place </th>
@@ -20,7 +19,6 @@
         <tbody>
         @foreach($offers as $offer)
             <tr>
-                <td>{{ $offer->id }}</td>
                 <td>{{ $offer->title }}</td>
                 <td>{{ $offer->company->name }}</td>
                 <td>{{ $offer->salary_min }} - {{ $offer->salary_max }} €</td>

@@ -3,7 +3,9 @@
 <div class="col-lg-12 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Detailed info :</h4> 
+        <a href="{{ route('select-all-companies') }}"> < View all job offers</a>
+        <br><br>
+        <h4 class="card-title">Detailed info :</h4> 
         <h1>{{ $company->name }}</h1>
         <p>Sector : {{ $company->sector }}</p>
         <p>Number of employees: {{ $company->number_of_staff }}</p>

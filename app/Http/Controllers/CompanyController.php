@@ -39,7 +39,7 @@ class CompanyController extends Controller
 
             $company->save();
 
-            return redirect()->route('select-all-offers');
+            return redirect()->route('select-all-companies');
         }
     }
 
@@ -89,6 +89,6 @@ class CompanyController extends Controller
     public function getUpdateCompanyForm($id)
     {
         $company= Company::find($id);
-        return view('company-update', ['company' => $company]);
+        return view('job-offer-update-form', ['company' => $company]);
     }
 }

@@ -40,37 +40,6 @@ class HomeController extends Controller
         return redirect()->route('select-all-tasks');
     }
 
-
-    public function insertCompany(Request $request)
-    {
-        $company_name = $request->input('companyName');
-        $sector = $request->input('sector');
-        $company_description = $request->input('companyDescription');
-        $number_of_employees = $request->input('numberOfEmployees');
-        $contact_mail = $request->input('contactMail');
-        $contact_phone = $request->input('contactPhone');
-        $ico = $request->input('ico');
-        $dic = $request->input('dic');
-
-        $company = Company::where('name', '=', $company_name)->first();
-
-        if(!$company){
-            $company = new Company();
-            $company->name = $company_name;
-            $company->sector = $sector;
-            $company->description = $company_description;
-            $company->number_of_staff = $number_of_employees;
-            $company->contact_mail = $contact_mail;
-            $company->contact_phone = $contact_phone;
-            $company->ICO = $ico;
-            $company->DIC = $dic;
-
-            $company->save();
-
-            return redirect()->route('select-all-offers');
-        }
-    }
-
     public function selectTask($id)
     {
         $task = Task::find($id);

@@ -10,11 +10,11 @@
             <input type="hidden" name="company-id" value="{{ $company_id }}">
             <div class="form-group">
                 <label for="headline-text">Headline text</label>
-                <input type="text" class="form-control" id="headline-text" placeholder="Headline text" name="headlineText">
+                <input required type="text" class="form-control" id="headline-text" placeholder="Headline text" name="headlineText">
             </div>
             <div class="form-group">
                 <label for="start-date">Start date</label>
-                <input type="date" class="form-control" id="start-date" placeholder="Start date" name="startDate">
+                <input required type="date" class="form-control" id="start-date" placeholder="Start date" name="startDate">
             </div>
             <div class="form-group">
                 <label for="salary-min">Salary min</label>
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label for="work-place">Work place</label>
-                <input type="text" class="form-control" id="work-place" placeholder="Work place" name="workPlace">
+                <input required type="text" class="form-control" id="work-place" placeholder="Work place" name="workPlace">
             </div>
             <div class="form-group">
                 <label for="job-desc">Job description</label>

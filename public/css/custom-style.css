@@ -19,3 +19,29 @@ table{
     padding-right: 24px;
     padding-left: 24px;
 }
+
+.simple-link{
+    color: white;
+    transition: 0.4s;
+    padding-bottom: 4px;
+}
+
+.simple-link:hover{
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+
+.sidebar-offcanvas{
+    position: fixed;
+}
+
+.main-panel {
+    margin-left: 260px;
+    background-color: #edf0f3;
+}
+
+.main-panel .content-wrapper, .footer, .table-striped tbody tr:nth-of-type(odd){
+    background-color: #edf0f3;
+}
+
