@@ -14,7 +14,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="{{ route('dashboard') }}">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
@@ -36,17 +36,8 @@
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">Projects</h6>
                 </div>
-                <a href="{{ route('insert-form') }}" class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add new company</a>
+                <a href="{{ route('insert-form') }}" class="btn btn-block btn-lg btn-gradient-info mt-4">+ Add new company</a>
                 <!--<button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Create job offer</button>-->
-                <div class="mt-4">
-                  <div class="border-bottom">
-                    <p class="text-secondary">Categories</p>
-                  </div>
-                  <ul class="gradient-bullet-list mt-4">
-                    <li>Free</li>
-                    <li>Pro</li>
-                  </ul>
-                </div>
               </span>
             </li>
           </ul>
