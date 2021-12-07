@@ -26,14 +26,14 @@
                 <td class="table-operations">
                     <a title="info" href="{{ route('select-job-offer', ['id' => $offer->id]) }}"><i class="mdi mdi-information"></i></a>
                     <a title="edit" href="{{ route('update-job-offer-form', ['id' => $offer->id]) }}"><i class="mdi mdi-application-edit"></i></a>
-                    <a title="delete" href="{{ route('delete-job-offer', ['id' => $offer->id]) }}"><i class="mdi mdi-delete"></i></a>
+                    <a title="remove" onclick="return confirm('Do you want to remove job offer : {{ $offer->title }} from company : {{ $offer->company->name }}?')" href="{{ route('delete-job-offer', ['id' => $offer->id]) }}"><i class="mdi mdi-delete"></i></a>
                 </td>
             </tr>
         @endforeach
         </tbody>
       </table>
       @else
-          Neexistuju ziadne ulohy
+          There are no job offers
       @endif
     </div>
   </div>

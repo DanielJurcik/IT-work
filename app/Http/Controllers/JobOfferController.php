@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+//Models
 use App\Models\Owner;
 use App\Models\Task;
 use App\Models\JobOffer;
 use App\Models\Company;
+//Other imports
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -15,6 +17,12 @@ class JobOfferController extends Controller
     {
         $company = Company::where('id', '=', $company_id)->first();
         return view('job-offer-form', ['company_id' => $company_id],['company_name' => $company->name]);
+    }
+
+    public function selectAllOffers()
+    {
+        $offers = JobOffer::all();
+        return view('select-all-offers', ['offers' => $offers]);
     }
 
     public function insertNewJobOffer(Request $request)
@@ -49,7 +57,6 @@ class JobOfferController extends Controller
     public function jobOfferDetail($id){
         $job_offer = JobOffer::find($id);
         $company = Company::find($job_offer->company_id);
-        //$job_offers = JobOffer::where('company_id', '=', $company -> $id)->get();
         return view('job-offer-detail', ['job_offer' => $job_offer],['company' => $company]);
     }
 
@@ -89,5 +96,12 @@ class JobOfferController extends Controller
         $job_offer= JobOffer::find($id);
         $company = Company::find($job_offer->company_id);
         return view('job-offer-update-form', ['job_offer' => $job_offer],['company' => $company]);
+    }
+
+    public function deleteJobOffer($id)
+    {
+        $job_offer= JobOffer::findOrFail($id);
+        $job_offer->delete();
+        return redirect()->route('select-all-offers');
     }
 }

@@ -7,8 +7,13 @@ table .table-operations i.mdi-delete{
     color: crimson;
 }
 
-table{
-    overflow-x: scroll;
+
+.card-body-small{
+    padding: 20px;
+}
+
+.card-body .card-img-holder{
+    overflow-x: hidden;
 }
 
 .btn-gradient-primary{
@@ -45,3 +50,7 @@ table{
     background-color: #edf0f3;
 }
 
+.bg-gradient-primary{
+    background: #03a9f4 !important;
+    box-shadow: none !important;
+}

@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
+//Models
 use App\Models\Owner;
 use App\Models\Task;
 use App\Models\JobOffer;
 use App\Models\Company;
+//Other imports
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class CompanyController extends Controller
 {
+    public function getInsertForm()
+    {
+        return view('company-insert');
+    }
 
     public function insertCompany(Request $request)
     {
-        echo('funguje');
+        //Getting data from form
         $company_name = $request->input('companyName');
         $sector = $request->input('sector');
         $company_description = $request->input('companyDescription');
@@ -24,8 +30,10 @@ class CompanyController extends Controller
         $ico = $request->input('ico');
         $dic = $request->input('dic');
 
+        //Check for name of company
         $company = Company::where('name', '=', $company_name)->first();
 
+        //Insert into DB
         if(!$company){
             $company = new Company();
             $company->name = $company_name;
@@ -59,6 +67,7 @@ class CompanyController extends Controller
 
     public function updateCompany(Request $request)
     {
+        //Getting data from form
         $id = $request->input('id', false);
         $company_name = $request->input('companyName', false);
         $sector = $request->input('sector', false);
@@ -69,6 +78,7 @@ class CompanyController extends Controller
         $ico = $request->input('ico', false);
         $dic = $request->input('dic', false);
 
+        //Update info in DB
         if($id) {
             $company = Company::find($id);
             $company->name = $company_name;
@@ -90,5 +100,14 @@ class CompanyController extends Controller
     {
         $company= Company::find($id);
         return view('job-offer-update-form', ['company' => $company]);
+    }
+
+
+    public function deleteCompany($id)
+    {
+        $company = Company::findOrFail($id);
+        $jobOffers = JobOffer::where('company_id', '=', $id)->delete();
+        $company->delete();
+        return redirect()->route('select-all-companies');
     }
 }

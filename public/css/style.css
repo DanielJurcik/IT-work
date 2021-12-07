@@ -10515,9 +10515,7 @@ code {
     width: 36px;
     height: 36px;
     border-radius: 4px;
-    text-align: center;
-    -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
-    box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35); }
+    text-align: center;}
     .page-title .page-title-icon i {
       font-size: .9375rem;
       line-height: 36px; }
