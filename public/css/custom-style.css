@@ -54,3 +54,50 @@ table .table-operations i.mdi-delete{
     background: #03a9f4 !important;
     box-shadow: none !important;
 }
+
+textarea.detail-text-area {
+    min-height: 60px;
+    overflow-y: auto;
+    word-wrap:break-word;
+    border: none;
+    font-size: 16px;
+    line-height: 1.4em;
+}
+
+a{ 
+  font-family: "ubuntu-regular", sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #0074D9;
+  }
+
+  a:hover{
+      text-decoration: none;
+  }
+  
+  .underline{
+    position: relative;
+    margin-bottom: 16px;
+    border: 0;
+  }
+  
+  .underline::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0074D9;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    .underline:hover::before{
+      left: 0;
+      right: auto;
+      width: 100%;
+    }
+  }
