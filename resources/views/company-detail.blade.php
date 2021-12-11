@@ -3,21 +3,20 @@
 <div class="col-lg-12 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
-        <a href="{{ route('select-all-companies') }}"> < View all job offers</a>
-        <br><br>
+    <a href="{{ route('select-all-companies') }}" class="btn btn-lg btn-gradient-info mb-4">< View all companies</a>
         <h4 class="card-title">Detailed info :</h4> 
         <h1>{{ $company->name }}</h1>
-        <p>Sector : {{ $company->sector }}</p>
-        <p>Number of employees: {{ $company->number_of_staff }}</p>
+        <p><b>Sector :</b> {{ $company->sector }}</p>
+        <p><b>Number of employees:</b> {{ $company->number_of_staff }}</p>
         <p>{{ $company->description }}</p>
         <h3>Contact info</h3>
         <p>{{ $company->contact_mail }}</p>
         <p>{{ $company->contact_phone }}</p>
         <h3>Business info</h3>
-        <p>ICO : {{ $company->ICO }}</p>
-        <p>DIC : {{ $company->DIC }}</p>
+        <p><b>ICO :</b> {{ $company->ICO }}</p>
+        <p><b>DIC :</b> {{ $company->DIC }}</p>
         <br>
-        <p>Last updated : {{ $company->updated_at }}</p>
+        <p><b>Last updated :</b> {{ $company->updated_at }}</p>
         <br>
         <h3>Job offers :</h3>
         <div class="row">
@@ -43,7 +42,7 @@
                     <h4 class="font-weight-normal mb-3">{{ $company->name }}<i class="mdi mdi-chart-line mdi-24px float-right"></i>
                     </h4>
                     <h2 class="mb-5">{{ $jobOffer->title }}</h2>
-                    <a class="simple-link"><h6 class="card-text">See more details</h6></a>
+                    <a href="{{ route('select-job-offer', ['id' => $jobOffer->id]) }}" class="simple-link"><h6 class="card-text">See more details</h6></a>
                   </div>
                 </div>
               </div>

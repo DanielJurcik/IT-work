@@ -3,13 +3,14 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
+        <a href="{{ route('select-all-companies') }}" class="btn btn-lg btn-gradient-info mb-4">< View all companies</a>
         <h4 class="card-title">Add new company</h4>
         <p class="card-description">  </p>
         <form class="forms-sample" method="post" action="{{ route('insert-company') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <label for="company-name">Company name</label>
-                <input type="text" class="form-control" id="company-name" placeholder="Company name" name="companyName">
+                <input required type="text" class="form-control" id="company-name" placeholder="Company name" name="companyName">
             </div>
             <div class="form-group">
                 <label for="sector">Sector</label>
@@ -25,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label for="contact-mail">Contact mail</label>
-                <input type="email" class="form-control" id="contact-mail" placeholder="Contact mail" name="contactMail">
+                <input required type="email" class="form-control" id="contact-mail" placeholder="Contact mail" name="contactMail">
             </div>
             <div class="form-group">
                 <label for="contact-phone">Contact phone</label>
@@ -40,7 +41,7 @@
                 <input type="number" class="form-control" id="dic" placeholder="DIC" name="dic">
             </div>
             <button type="submit" class="btn btn-gradient-primary mr-2">Add company</button>
-            <!--<a class="btn btn-light" href="">Cancel</a>-->
+            <a class="btn btn-light" href="{{ route('select-all-companies') }}">Cancel</a>
         </form>
         </div>
     </div>

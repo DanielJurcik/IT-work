@@ -3,6 +3,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
+        <a class="underline" href="{{ route('select-all-offers') }}"> < View all job offers</a><br><br>
         <h4 class="card-title">Update job offer info</h4>
         <p class="card-description">{{ $company->name }}</p>
         <form class="forms-sample" method="post" action="{{ route('update-job-offer') }}">
@@ -18,12 +19,20 @@
                 <input value="{{ $job_offer->start_date }}" required type="date" class="form-control" id="start-date" placeholder="Start date" name="startDate">
             </div>
             <div class="form-group">
-                <label for="salary-min">Salary min</label>
-                <input value="{{ $job_offer->salary_min }}" type="number" class="form-control" id="salary-min" placeholder="Salary min" name="salaryMin">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text btn-gradient-info text-white">€</span>
+                    </div>
+                    <input type="number" id="salary-min" placeholder="Salary min" name="salaryMin" class="form-control">
+                </div>
             </div>
             <div class="form-group">
-                <label for="salary-max">Salary max</label>
-                <input value="{{ $job_offer->salary_max }}" type="number" class="form-control" id="salary-max" placeholder="Salary max" name="salaryMax">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text btn-gradient-info text-white">€</span>
+                    </div>
+                    <input type="number" id="salary-min" placeholder="Salary max" name="salaryMax" class="form-control">
+                </div>
             </div>
             <div class="form-group">
                 <label for="work-place">Work place</label>
@@ -42,7 +51,7 @@
                 <textarea name="benefits" class="form-control" placeholder="Benefits..." rows="12">{{ $job_offer->benefits }}</textarea>
             </div>
             <button type="submit" class="btn btn-gradient-primary mr-2">Update job offer</button>
-            <!--<a class="btn btn-light" href="">Cancel</a>-->
+            <a class="btn btn-light" href="{{ route('select-all-offers') }}">Cancel</a>
         </form>
         </div>
     </div>

@@ -3,6 +3,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
+        <a href="{{ route('select-all-companies') }}" class="btn btn-lg btn-gradient-info mb-4">< View all companies</a>
         <h4 class="card-title">Update company details</h4>
         <p class="card-description">  </p>
         <form class="forms-sample" method="post" action="{{ route('update-company') }}">
