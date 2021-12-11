@@ -28,11 +28,6 @@ class JobOffer extends Model
         return $this->hasMany(JobOffer::class);
     }
 
-    public function owner()
-    {
-        return $this->belongsTo(Owner::class);
-    }
-
     public function company()
     {
         return $this->belongsTo(Company::class);

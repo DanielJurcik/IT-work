@@ -32,7 +32,7 @@ class JobOfferController extends Controller
         $salary_min = $request->input('salaryMin');
         $salary_max = $request->input('salaryMax');
         $work_place = $request->input('workPlace');
-        $description = $request->input('job-desc');
+        $description = nl2br($request->input('job-desc'));
         $experience = $request->input('experience');
         $benefits = $request->input('benefits');
         $company_id = $request->input('company-id');

@@ -99,7 +99,7 @@ class CompanyController extends Controller
     public function getUpdateCompanyForm($id)
     {
         $company= Company::find($id);
-        return view('job-offer-update-form', ['company' => $company]);
+        return view('company-update', ['company' => $company]);
     }
 
 
